@@ -1,0 +1,7 @@
+[user]
+	email = annada@pielabs.ai
+	name = Annada Behera
+[core]
+	editor = kak
+[init]
+	defaultBranch = master
