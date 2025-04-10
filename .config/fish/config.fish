@@ -46,6 +46,6 @@ end
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 # Options of fx JSON viewer
-FX_SHOW_SIZE=true
-FX_NO_MOUSE=true
-FX_THEME=5
+set FX_SHOW_SIZE true
+set FX_NO_MOUSE true
+set FX_THEME 5
