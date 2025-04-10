@@ -44,3 +44,8 @@ end
 
 # The dotfiles git tracking
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+
+# Options of fx JSON viewer
+FX_SHOW_SIZE=true
+FX_NO_MOUSE=true
+FX_THEME=5
