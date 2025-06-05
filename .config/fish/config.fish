@@ -6,12 +6,18 @@ end
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-if test -f /home/annada/.miniforge/bin/conda
-    eval /home/annada/.miniforge/bin/conda "shell.fish" "hook" $argv | source
+if test -f /home/annada/.miniforge3/bin/conda
+    eval /home/annada/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/annada/.miniforge3/etc/fish/conf.d/conda.fish"
+        . "/home/annada/.miniforge3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/annada/.miniforge3/bin" $PATH
+    end
 end
 
-if test -f "/home/annada/.miniforge/etc/fish/conf.d/mamba.fish"
-    source "/home/annada/.miniforge/etc/fish/conf.d/mamba.fish"
+if test -f "/home/annada/.miniforge3/etc/fish/conf.d/mamba.fish"
+    source "/home/annada/.miniforge3/etc/fish/conf.d/mamba.fish"
 end
 # <<< conda initialize <<<
 
@@ -44,6 +50,10 @@ end
 
 # The dotfiles git tracking
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+
+
+# Options for GO
+set -x GOPATH $HOME/.go
 
 # Options of fx JSON viewer
 set -x FX_SHOW_SIZE true
