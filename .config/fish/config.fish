@@ -13,6 +13,13 @@ end
 # The dotfiles git tracking
 alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
+# SSH Agent
+# Start an SSH agent only if one isn't already running (e.g. by GNOME/macOS)
+if not set -q SSH_AUTH_SOCK
+    eval (ssh-agent -c) > /dev/null
+    set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+    set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+end
 
 # Options for GO
 set -x GOPATH $HOME/.go
