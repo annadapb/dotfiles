@@ -64,7 +64,10 @@ set -add global ui_options terminal_enable_mouse=0
 # Setup Ugrep as the grep command
 set-option global grepcmd 'ugrep -RHn'
 
-# Language server protocol
+# Copy selection
+map global user y '<a-|>xclip -i<ret>' -docstring 'Copy the selection to X11 Primary'
+
+    # Language server protocol
 eval %sh{kak-lsp --kakoune -s $kak_session}
 lsp-enable
 lsp-auto-hover-disable
