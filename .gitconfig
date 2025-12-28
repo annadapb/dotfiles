@@ -1,10 +1,16 @@
 [user]
 	email = annada.behera@hotmail.com
 	name = Annada Behera
+
 [core]
 	editor = kak
+
 [init]
 	defaultBranch = master
+
 [commit]
     verbose=true
     cleanup=scissors
+
+[push]
+    autoSetupRemote=true
