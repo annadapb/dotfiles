@@ -24,6 +24,9 @@ end
 # Options for GO
 set -x GOPATH $HOME/.go
 
+# Default text editor is kakoune
+set -x EDITOR kak
+
 # Options of fx JSON viewer
 set -x FX_SHOW_SIZE true
 set -x FX_NO_MOUSE true
