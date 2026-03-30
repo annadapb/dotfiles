@@ -1,4 +1,4 @@
 #!/bin/bash
-date "$@" '+%a, %b %d, %Y'
+date -d "$@" '+%a, %b %d, %Y'
 echo "================="
 

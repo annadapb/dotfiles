@@ -1,0 +1,30 @@
+#!/bin/bash
+# Usage: ,procrastinate [top_n]
+# Example: ,procrastinate 15 (Shows top 15 most delayed tasks. Defaults to 10)
+
+TODO_FILE="${TODO_TXT:-$HOME/Syncthing/todo.txt}"
+LIMIT=${1:-10}
+
+awk '
+/^[0-9a-f]{7} / {
+    hash = $1
+    count[hash]++
+    
+    # Since newer dates are at the top of your file, the FIRST time 
+    # we see a hash, it is the most recent state of that task.
+    if (!text[hash]) {
+        # Strip the hash itself so we just get the status and description
+        sub(/^[0-9a-f]{7}[ \t]+/, "", $0)
+        text[hash] = $0
+    }
+}
+END {
+    for (h in count) {
+        # A task entered once and finished has a count of 1 (0 moves).
+        # We only care about tasks with > 1 occurrences.
+        moves = count[h] - 1
+        if (moves > 0) {
+            printf "%4d moves | %s | %s\n", moves, h, text[h]
+        }
+    }
+}' "$TODO_FILE" | sort -nr | head -n "$LIMIT"

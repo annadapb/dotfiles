@@ -1,0 +1,4 @@
+#!/bin/bash
+input=$(cat)
+printf "%s %s\n" $(echo $input | sha1sum | cut -c1-7) "$input" |\
+fmt -w 72 | sed '2,$s/^/        /'
