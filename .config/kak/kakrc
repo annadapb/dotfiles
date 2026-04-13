@@ -86,5 +86,10 @@ map global object d '<a-semicolon>lsp-diagnostic-object --include-warnings<ret>'
 map global object D '<a-semicolon>lsp-diagnostic-object<ret>' -docstring 'LSP errors'
 map global goto s '<esc>:lsp-document-symbol<ret>' -docstring 'all document symbols'
 
+# Restore the classic LSP 'goto' mappings
+map global goto d "<esc>:lsp-definition<ret>" -docstring "LSP definition"
+map global goto r "<esc>:lsp-references<ret>" -docstring "LSP references"
+map global goto y "<esc>:lsp-type-definition<ret>" -docstring "LSP type definition"
+map global goto i "<esc>:lsp-implementation<ret>" -docstring "LSP implementation"
            
-map global user f '<a-i>p|fmt<ret>' -docstring 'fmt paragraph'
+map global user f '<a-i>p|par 66<ret>' -docstring 'format paragraph'
