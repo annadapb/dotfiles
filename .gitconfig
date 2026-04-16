@@ -1,19 +1,19 @@
 [user]
-	email = annada.behera@hotmail.com
-	name = Annada Behera
+    email = annada.behera@hotmail.com
+    name = Annada Behera
 [core]
-	editor = kak
+    editor = kak
 [init]
-	defaultBranch = master
+    defaultBranch = master
 [commit]
     verbose=true
     cleanup=scissors
 [push]
     autoSetupRemote=true
 [credential]
-	helper = libsecret
+    helper = libsecret
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
