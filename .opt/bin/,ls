@@ -1,0 +1,63 @@
+#!/bin/env python
+
+from pathlib import Path
+import argparse
+import json
+
+DESC = "List directories in JSON format" 
+
+parser = argparse.ArgumentParser(description=DESC)
+
+parser.add_argument( "dir_name",
+    nargs="?", default=Path.cwd(),
+    help = "The directory to list the files",)
+
+parser.add_argument("-I", "--no-indent", action="store_true",
+    help="Do not indent the output json.")
+parser.add_argument("-i", "--indent", type=int, default=4,
+    help="Do not indent ")
+
+args = parser.parse_args()
+
+def info(directory):
+    dir_info = {}
+    stat = directory.stat()
+    for attr in stat.__dir__():
+        if attr[:2]=="st": dir_info[attr]=getattr(stat, attr)
+
+    dir_info['absolute_path'] = str(directory)
+    dir_info['is_dir'] = True
+    for attr in ['name', 'parent','stem']:
+        dir_info[attr] = str(getattr(directory, attr))
+
+    for attr in ['parts', 'parents']:
+        dir_info[attr] = [str(i) for i in getattr(directory, attr)]
+
+    if directory.is_file():
+        dir_info['is_dir'] = False
+        for attr in ['suffix',]:
+            dir_info[attr] = str(getattr(directory, attr))
+
+        for attr in ['suffixes',]:
+            dir_info[attr] = [str(i) for i in getattr(directory, attr)]
+
+    return dir_info
+
+def recurse(directory):
+    out_dict = list()
+    sub_directory = directory.glob('*')
+    for sub in list(sub_directory):
+        out_dict.append(info(sub))
+    return out_dict
+
+
+
+directory = Path(args.dir_name)
+output_dict = recurse(directory)
+
+if args.no_indent: print(json.dumps(output_dict))
+else: print(json.dumps(output_dict, indent=args.indent))
+
+
+
+
