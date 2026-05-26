@@ -76,6 +76,9 @@ hook global WinSetOption filetype=(latex) %{
     map global user z ':texlab-forward-search<ret>' -docstring 'goto zathura'
 }
 
+map global user h ':buffer-previous' -docstring 'Previous buffer'
+map global user h ':buffer-next' -docstring 'Next buffer'
+
 hook global WinSetOption filetype=(tcl) %{
     remove-highlighter window/tcl
 }
