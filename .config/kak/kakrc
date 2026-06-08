@@ -79,9 +79,7 @@ hook global WinSetOption filetype=(latex) %{
 map global user k ':buffer-previous<ret>' -docstring 'Previous buffer'
 map global user j ':buffer-next<ret>' -docstring 'Next buffer'
 
-hook global WinSetOption filetype=(tcl) %{
-    remove-highlighter window/tcl
-}
+# hook global WinSetOption filetype=(tcl) %{ remove-highlighter window/tcl }
 
 map global user l %{:enter-user-mode lsp<ret>} -docstring "LSP mode"
 map global insert <tab> '<a-;>:try lsp-snippets-select-next-placeholders catch %{ execute-keys -with-hooks <lt>tab> }<ret>' -docstring 'Select next snippet placeholder'
