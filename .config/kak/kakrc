@@ -32,7 +32,7 @@ map global normal <c-a> ': inc %val{count} +<ret>'
 map global normal <c-x> ': inc %val{count} -<ret>'
 
 # Change color scheme
-colorscheme gruvbox-dark
+colorscheme solarized-dark
 
 # Add a indicator for column 80
 add-highlighter global/ column '%sh{echo $(($kak_opt_autowrap_column + 1))}' +r@Whitespace
