@@ -1,4 +1,4 @@
 xbps-install -S
 xbps-install -uy xbps
 xbps-install -uy void-repo-nonfree
-xbps-install -uy fish-shell 7zip kakoune kak-lsp curl wget ugrep bat qalculate elogind polkit dbus xtools inotify-tools xmirror tree fuse-sshfs ImageMagick zathura-ps bc par broot tmux tcl
+xbps-install -uy fish-shell 7zip kakoune kak-lsp curl wget ugrep bat qalculate elogind polkit dbus xtools inotify-tools xmirror tree fuse-sshfs ImageMagick zathura-ps bc par broot tmux tcl file
