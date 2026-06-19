@@ -1,0 +1,50 @@
+#!/usr/bin/env tclsh
+
+# 1. Validation
+if {$argc < 2} {
+    puts stderr "Usage: [file tail $argv0] \"<command>\" <arg1> \[<arg2> ...\]"
+    puts stderr "Example: [file tail $argv0] \"pdflatex %1; bibtex %2\" main.tex main"
+    exit 1
+}
+
+set cmd_template [lindex $argv 0]
+set arguments [lrange $argv 1 end]
+
+# 2. Main Loop
+while {1} {
+    # Filter out which arguments are actual existing files to pass to inotifywait
+    set watch_files {}
+    foreach arg $arguments {
+        if {[file exists $arg]} {
+            lappend watch_files $arg
+        }
+    }
+
+    # If none of the arguments exist yet as files, default to watching all of them
+    if {[llength $watch_files] == 0} {
+        set watch_files $arguments
+    }
+
+    # Block until any of the watched files are written to
+    if {[catch {exec inotifywait -e close_write -qq {*}$watch_files}]} {
+        after 100
+        continue
+    }
+
+    # Clear terminal screen
+    catch {exec clear >@ stdout}
+
+    # 3. Build the placeholder map (%f -> arg1, %1 -> arg1, %2 -> arg2...)
+    set macro_map [list %f [lindex $arguments 0]]
+    set i 1
+    foreach arg $arguments {
+        lappend macro_map "%$i" $arg
+        incr i
+    }
+
+    # Perform the substitutions
+    set current_cmd [string map $macro_map $cmd_template]
+
+    # 4. Execute via 'sh' to natively handle multiple statements (; , &&, pipes)
+    catch {exec >@ stdout 2>@ stderr <@ stdin sh -c $current_cmd}
+}
