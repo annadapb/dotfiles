@@ -55,7 +55,14 @@ on current word, and jump to the next match"
 # Comment lines with #
 map global normal '#' ': comment-line<ret>'
 
-# Remove the assistant
+
+# Do math with qalc
+define-command calc -docstring "Evaluate selection with qalc" %{
+    execute-keys "|qalc -t -f -<ret>"
+}
+map global user c ': calc <ret>' -docstring 'Evaluate selection with qalc'
+
+    # Remove the assistant
 set -add global ui_options terminal_assistant=none
 
 # Disable the mouse
