@@ -33,4 +33,4 @@ c.editor.command = [ "mate-terminal",
 
 c.content.local_content_can_access_remote_urls = True
 
-config.bind(",r", "hint links spawn --userscript readability")
+config.bind(",r", "spawn --userscript readability")
