@@ -31,3 +31,7 @@ set -x EDITOR kak
 set -x FX_SHOW_SIZE true
 set -x FX_NO_MOUSE true
 set -x FX_THEME 3
+
+# Add personal and user bin directory to PATH
+set -gx PATH "/home/annada/.local/bin" $PATH
+set -gx PATH "/home/annada/.opt/bin" $PATH
