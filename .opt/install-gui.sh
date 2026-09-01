@@ -1,4 +1,4 @@
 xbps-install -S
 xbps-install -uy xbps
 xbps-install -uy void-repo-nonfree
-xbps-install -uy mate mate-extra pluma caja-open-terminal zathura zathura-pdf-mupdf qutebrowser
+xbps-install -uy mate mate-extra pluma caja-open-terminal zathura zathura-pdf-mupdf qutebrowser pdf.js rxvt-unicode
