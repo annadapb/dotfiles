@@ -4,8 +4,8 @@ URxvt.scrollBar:            false
 URxvt.saveLines:            2000
 URxvt.skipBuiltinGlyphs:    true
 
-URxvt.font:                 xft:Commit Mono:size=13:antialias=true:hinting=true, xft:DejaVu Sans Mono:size=13
-URxvt.boldFont:             xft:Commit Mono:bold:size=13:antialias=true:hinting=true, xft:DejaVu Sans Mono:bold:size=13
+URxvt.font:                 xft:Commit Mono:size=12:antialias=true:hinting=true, xft:DejaVu Sans Mono:size=13
+URxvt.boldFont:             xft:Commit Mono:bold:size=12:antialias=true:hinting=true, xft:DejaVu Sans Mono:bold:size=13
 
 URxvt.letterSpace:          -1
 URxvt.lineSpace:            0
