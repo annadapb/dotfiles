@@ -1,55 +1,53 @@
-URxvt.buffered:             true
-URxvt.depth:                24
-URxvt.scrollBar:            false
-URxvt.saveLines:            2000
-URxvt.skipBuiltinGlyphs:    true
+! Window Geometry & Scrolling
+XTerm*geometry:             96x32
+XTerm*saveLines:            2000
+XTerm*scrollBar:            false
+XTerm*fastScroll:           true
+XTerm*jumpScroll:           true
+XTerm*scrollTtyOutput:      false
+XTerm*scrollKey:            true
 
-URxvt.font:                 xft:Commit Mono:size=12:antialias=true:hinting=true, xft:DejaVu Sans Mono:size=13
-URxvt.boldFont:             xft:Commit Mono:bold:size=12:antialias=true:hinting=true, xft:DejaVu Sans Mono:bold:size=13
+! Fonts & Rendering
+XTerm*faceName:             Commit Mono
+XTerm*faceSize:             13
+XTerm*faceNameDoublesize:   DejaVu Sans Mono
+XTerm*renderFont:           true
+XTerm*scaleHeight:          1.0
 
-URxvt.letterSpace:          -1
-URxvt.lineSpace:            0
+! Security & Sandbox (Stops cat /dev/urandom from resizing or dumping HTML)
+XTerm*allowWindowOps:       false
+XTerm*printerControlMode:   0
+XTerm*disallowedWindowOps:  20,21,Reset,SetXprop,SetWinLines,SetWinChars,SetIconName,SetTitle
 
-URxvt.cursorBlink:          false
-URxvt.cursorUnderline:      true
-URxvt.pointerBlank:         true
-URxvt.pointerBlankDelay:    2
+! Selection & Clipboard (Restores Middle-Click)
+XTerm*selectToClipboard:    false
+XTerm*VT100.translations: #override \
+    Shift <Key>Insert: insert-selection(CLIPBOARD)
+
+! Cursor & Pointer
+XTerm*cursorBlink:          false
+XTerm*cursorUnderline:      true
+XTerm*pointerBlank:         true
+XTerm*pointerBlankDelay:    2
 
 ! Gruvbox (Dark) colorscheme
-URxvt.background:           #282828
-URxvt.foreground:           #ebdbb2
-URxvt.cursorColor:          #ebdbb2
-URxvt.color0:               #282828
-URxvt.color8:               #928374
-URxvt.color1:               #cc241d
-URxvt.color9:               #fb4934
-URxvt.color2:               #98971a
-URxvt.color10:              #b8bb26
-URxvt.color3:               #d79921
-URxvt.color11:              #fabd2f
-URxvt.color4:               #458588
-URxvt.color12:              #83a598
-URxvt.color5:               #b16286
-URxvt.color13:              #d3869b
-URxvt.color6:               #689d6a
-URxvt.color14:              #8ec07c
-URxvt.color7:               #a89984
-URxvt.color15:              #fbf1c7
+XTerm*background:           #282828
+XTerm*foreground:           #ebdbb2
+XTerm*cursorColor:          #ebdbb2
 
-! Fix pasting
-URxvt.perl-ext-common:      default,-confirm-paste,clipboard 
-URxvt.iso14755:             false 
-URxvt.iso14755_52:          false
-URxvt.clipboard.copycmd:    xclip -selection clipboard -i
-URxvt.clipboard.pastecmd:   xclip -selection clipboard -o
-URxvt.keysym.Shift-Insert:  perl:clipboard:paste
-
-! Window size geometry
-URxvt.geometry:             96x32
-
-! Fast latency hacks
-URxvt.jumpScroll:           true
-URxvt.skipScroll:           true
-URxvt.scrollTtyOutput:      false
-URxvt.scrollWithBuffer:     true
-URxvt.scrollTtyKeypress:    true
+XTerm*color0:               #282828
+XTerm*color8:               #928374
+XTerm*color1:               #cc241d
+XTerm*color9:               #fb4934
+XTerm*color2:               #98971a
+XTerm*color10:              #b8bb26
+XTerm*color3:               #d79921
+XTerm*color11:              #fabd2f
+XTerm*color4:               #458588
+XTerm*color12:              #83a598
+XTerm*color5:               #b16286
+XTerm*color13:              #d3869b
+XTerm*color6:               #689d6a
+XTerm*color14:              #8ec07c
+XTerm*color7:               #a89984
+XTerm*color15:              #fbf1c7
