@@ -17,12 +17,13 @@ XTerm*scaleHeight:          1.0
 ! Security & Sandbox (Stops cat /dev/urandom from resizing or dumping HTML)
 XTerm*allowWindowOps:       false
 XTerm*printerControlMode:   0
-XTerm*disallowedWindowOps:  20,21,Reset,SetXprop,SetWinLines,SetWinChars,SetIconName,SetTitle
+XTerm*disallowedWindowOps:  false
 
 ! Selection & Clipboard (Restores Middle-Click)
 XTerm*selectToClipboard:    false
 XTerm*VT100.translations: #override \
-    Shift <Key>Insert: insert-selection(CLIPBOARD)
+    Shift <Key>Insert: insert-selection(CLIPBOARD) \n\
+    Alt <Key>Return: spawn-new-terminal()
 
 ! Cursor & Pointer
 XTerm*cursorBlink:          false
