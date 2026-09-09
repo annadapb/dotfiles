@@ -60,7 +60,11 @@ map global normal '#' ': comment-line<ret>'
 define-command calc -docstring "Evaluate selection with qalc" %{
     execute-keys "|qalc -t -f -<ret>"
 }
+define-command mathml -docstring "Convert selected LaTeX math to MathML using latex2mathml" %{
+    execute-keys '|uvx latex2mathml -s <ret>'
+}
 map global user c ': calc <ret>' -docstring 'Evaluate selection with qalc'
+map global user m ': mathml <ret>' -docstring 'latex to mathml'
 
     # Remove the assistant
 set -add global ui_options terminal_assistant=none
