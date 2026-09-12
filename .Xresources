@@ -14,20 +14,20 @@ XTerm*faceNameDoublesize:   DejaVu Sans Mono
 XTerm*renderFont:           true
 XTerm*scaleHeight:          1.0
 
-! Security & Sandbox (Stops cat /dev/urandom from resizing or dumping HTML)
+! Security & Sandbox
 XTerm*allowWindowOps:       false
 XTerm*printerControlMode:   0
-XTerm*disallowedWindowOps:  false
 
 ! Selection & Clipboard (Restores Middle-Click)
 XTerm*selectToClipboard:    false
 XTerm*VT100.translations: #override \
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
     Shift <Key>Insert: insert-selection(CLIPBOARD) \n\
     Alt <Key>Return: spawn-new-terminal()
 
 ! Cursor & Pointer
 XTerm*cursorBlink:          false
-XTerm*cursorUnderline:      true
+XTerm*cursorUnderLine:      true
 XTerm*pointerBlank:         true
 XTerm*pointerBlankDelay:    2
 
