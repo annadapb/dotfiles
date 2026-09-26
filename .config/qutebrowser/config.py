@@ -18,7 +18,7 @@ c.url.default_page = "about:blank"
 c.fonts.web.family.standard = "Source Serif 4"
 c.fonts.web.family.serif = "Source Serif 4"
 c.fonts.web.family.sans_serif = "Inter"
-c.fonts.web.family.fixed = "CommitMonoAnnada"
+c.fonts.web.family.fixed = "CommitMono"
 
 c.tabs.show = "never"
 c.statusbar.show = "in-mode"
