@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=Clipmenu Daemon
+Exec=env CM_SELECTIONS="primary clipboard" clipmenud
+Terminal=false
