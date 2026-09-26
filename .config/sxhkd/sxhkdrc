@@ -1,0 +1,16 @@
+# Rofi launcher
+super + Return
+    rofi -show drun
+
+# Window switcher
+super + backslash
+    rofi -show window
+
+# Calculator
+super + equal
+    rofi -show calc
+
+# Clipmenu
+super + bracketright
+    CM_LAUNCHER=rofi clipmenu -i
+
