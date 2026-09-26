@@ -1,0 +1,6 @@
+@theme "/usr/share/rofi/themes/Paper.rasi"
+
+configuration {
+	kb-row-up: "Super+k";
+	kb-row-down: "Super+j";
+}
