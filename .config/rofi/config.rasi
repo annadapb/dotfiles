@@ -1,6 +1,7 @@
 @theme "/usr/share/rofi/themes/Paper.rasi"
 
 configuration {
+    modes: [window, drun, run, calc];
 	kb-row-up: "Super+k";
 	kb-row-down: "Super+j";
 }
