@@ -10,6 +10,9 @@ config.bind("O", "open -w {url}")
 config.unbind("F")
 config.bind("F", "hint links window")
 
+config.bind('<Ctrl-g>', 'edit-text', mode='insert')
+config.unbind('<Ctrl-e>', mode='insert')
+
 config.bind("<F5>", "config-source")
 
 c.url.start_pages = "about:blank"
