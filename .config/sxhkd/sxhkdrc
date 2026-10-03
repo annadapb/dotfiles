@@ -1,16 +1,65 @@
-# Rofi launcher
+# --- Rofi Shortcuts ---
 super + Return
     rofi -show drun
-
-# Window switcher
 super + backslash
     rofi -show window
-
-# Calculator
 super + equal
     rofi -show calc
-
-# Clipmenu
 super + bracketright
     CM_LAUNCHER=rofi clipmenu -i
+super + bracketleft
+    rofi -show run
 
+
+# --- BSP WM Shortcuts ---
+# Close focused window (like tmux kill-pane)
+super + q
+    bspc node -c
+
+# Focus windows in direction (like tmux select-pane)
+super + {h,j,k,l}
+    bspc node -f {west,south,north,east}
+
+# Swap active window with neighbor (like tmux swap-pane)
+super + shift + {h,j,k,l}
+    bspc node -s {west,south,north,east}
+
+# Toggle fullscreen / zoom (like tmux prefix + z)
+super + z
+    bspc node -t ~fullscreen
+
+# Preselect split direction for the NEXT window to be opened
+super + ctrl + {h,j,k,l}
+    bspc node -p {west,south,north,east}
+
+# Cancel preselection if you change your mind
+super + ctrl + space
+    bspc node -p cancel
+
+# Expanding window size
+super + alt + {h,j,k,l}
+    bspc node -z {left -20 0, bottom 0 20, top 0 -20, right 20 0}
+
+# Shrinking window size
+super + alt + shift + {h,j,k,l}
+    bspc node -z {right -20 0, top 0 20, bottom 0 -20, left 20 0}
+
+# Switch to desktop 1-9
+super + {1-9}
+    bspc desktop -f '{1-9}'
+
+# Send focused window to desktop 1-9
+super + shift + {1-9}
+    bspc node -d '{1-9}'
+
+# Toggle between tiled and floating
+super + space
+    bspc node -t ~floating
+
+# Cycle next/previous desktop (e.g., Mod + Bracket keys)
+super + {comma,period}
+    bspc desktop -f {prev.local,next.local}
+
+# Jump to last visited desktop
+super + Tab
+    bspc desktop -f last
