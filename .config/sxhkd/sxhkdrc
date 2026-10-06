@@ -52,6 +52,10 @@ super + {1-9}
 super + shift + {1-9}
     bspc node -d '{1-9}'
 
+# Send focused window to prev or next desktop
+super + shift + {comma,period}
+    bspc node -d {prev.local,next.local}
+
 # Toggle between tiled and floating
 super + space
     bspc node -t ~floating
@@ -63,3 +67,4 @@ super + {comma,period}
 # Jump to last visited desktop
 super + Tab
     bspc desktop -f last
+
