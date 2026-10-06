@@ -1,3 +1,0 @@
-#!/bin/env bash
-
-ugrep -B 3 DEAD ~/Syncthing/todo.txt | ugrep -v '(=|--)'
