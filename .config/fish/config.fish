@@ -11,7 +11,7 @@ if test "$TERM" = "xterm-256color"
 end
 
 # The dotfiles git tracking
-alias dotfiles='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
+alias dfl='git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 # SSH Agent
 # Start an SSH agent only if one isn't already running (e.g. by GNOME/macOS)
