@@ -9,7 +9,7 @@ XTerm*scrollKey:            true
 
 ! Fonts & Rendering
 XTerm*faceName:             Commit Mono
-XTerm*faceSize:             13
+XTerm*faceSize:             12
 XTerm*faceNameDoublesize:   DejaVu Sans Mono
 XTerm*renderFont:           true
 XTerm*scaleHeight:          1.0
