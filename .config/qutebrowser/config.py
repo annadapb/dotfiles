@@ -5,10 +5,17 @@ config.bind("J", "scroll-page 0 -0.5")
 config.unbind("K")
 config.bind("K", "scroll-page 0 0.5")
 
+c.new_instance_open_target = "window"
+
 config.unbind("O")
-config.bind("O", "open -w {url}")
 config.unbind("F")
+config.bind("O", "cmd-set-text -s :open -w ")
+config.bind("t", "cmd-set-text -s :open -w ")
+config.bind("T", "cmd-set-text -s :open -w {url:pretty}")
 config.bind("F", "hint links window")
+config.bind("d", "close")
+
+for k in ['J', 'K', 'gt', 'g^', 'g$']: config.unbind(k)
 
 config.bind('<Ctrl-g>', 'edit-text', mode='insert')
 config.unbind('<Ctrl-e>', mode='insert')
@@ -37,3 +44,6 @@ c.editor.command = [ "mate-terminal",
 c.content.local_content_can_access_remote_urls = True
 
 config.bind(",r", "spawn --userscript readability")
+
+config.bind('<Ctrl-j>', 'completion-item-focus next', mode='command')
+config.bind('<Ctrl-k>', 'completion-item-focus prev', mode='command')
