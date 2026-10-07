@@ -1,0 +1,27 @@
+/* 1. Main prose typography with KaTeX and icon exclusions */
+main,
+article,
+section,
+main *:not(i):not([class*="icon"]):not([class*="material"]):not([font-family*="Icon"]):not(code):not(pre):not(code *):not(pre *):not(.katex):not(.katex *):not(annotation),
+article *:not(i):not([class*="icon"]):not([class*="material"]):not([font-family*="Icon"]):not(code):not(pre):not(code *):not(pre *):not(.katex):not(.katex *):not(annotation),
+section *:not(i):not([class*="icon"]):not([class*="material"]):not([font-family*="Icon"]):not(code):not(pre):not(code *):not(pre *):not(.katex):not(.katex *):not(annotation):not([class*="code"]) {
+  font-family: "Source Serif 4", serif !important;
+  font-size: 12pt;
+}
+
+/* 2. Code blocks */
+code,
+pre,
+[class*='code'], [class*='mono'],
+code *,
+pre * {
+  font-family: "CommitMono", monospace !important;
+  font-size: 11pt !important;
+}
+
+/* 3. Explicit KaTeX font safeguard */
+.katex,
+.katex * {
+  font-family: KaTeX_Main, "Times New Roman", serif !important;
+  font-size: 15pt;
+}

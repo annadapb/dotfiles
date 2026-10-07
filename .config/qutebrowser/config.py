@@ -38,8 +38,7 @@ c.url.searchengines = {
     "DEFAULT": "https://search.brave.com/search?q={}",
 }
 
-c.editor.command = [ "mate-terminal",
-    "--disable-factory", "--", "kak", "{}", ]
+c.editor.command = ["xterm", "-e", "kak", "{}"]
 
 c.content.local_content_can_access_remote_urls = True
 
@@ -47,3 +46,7 @@ config.bind(",r", "spawn --userscript readability")
 
 config.bind('<Ctrl-j>', 'completion-item-focus next', mode='command')
 config.bind('<Ctrl-k>', 'completion-item-focus prev', mode='command')
+
+c.content.user_stylesheets =  [
+    str(config.configdir/'userstyles'/'serif.css'),
+]
