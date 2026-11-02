@@ -1,0 +1,34 @@
+# Tap repositories for specialized packages
+tap "homebrew/core"
+
+# --- Headless / CLI Utilities ---
+brew "aria2"            # aria2
+brew "bc"               # bc
+brew "broot"            # broot
+brew "curl"             # curl
+brew "dbus"             # dbus
+brew "file-formula"     # file
+brew "fish"             # fish-shell
+brew "imagemagick"      # ImageMagick
+brew "inotify-tools"    # inotify-tools
+brew "kakoune"          # kakoune
+brew "kak-lsp"          # kak-lsp
+brew "libqalculate"     # qalculate CLI (qalc)
+brew "par"              # par
+brew "pygments"         # python3-Pygments
+brew "sevenzip"         # 7zip
+brew "sshfs"            # fuse-sshfs
+brew "tcl-tk"           # tcl
+brew "tcllib"           # tcllib
+brew "tmux"             # tmux
+brew "tree"             # tree
+brew "ugrep"            # ugrep
+brew "wget"             # wget
+
+# --- GUI / Window Management ---
+brew "qutebrowser"      # qutebrowser
+brew "rofi"             # rofi
+brew "sxhkd"            # sxhkd
+brew "xdotool"          # xdotool
+brew "xterm"            # xterm
+brew "zathura"          # zathura
